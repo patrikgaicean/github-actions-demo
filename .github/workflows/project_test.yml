@@ -1,0 +1,28 @@
+name: Go Project Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+    strategy:
+      matrix:
+        go-version: [1.20.5]
+    env:
+      MODE: "dev"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
+      - name: Setup Go environment
+        uses: actions/setup-go@v4.0.1
+        with:
+          go-version: ${{matrix.go-version}}
+      - name: Test App Code
+        run: go test
+
