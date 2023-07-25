@@ -7,4 +7,10 @@ func TestTwoSum(t *testing.T) {
 	if got != 3 {
 		t.Errorf("twoSum(1, 2) = %d, want 3", got)
 	}
+
+	got2 := twoSum(2, 2)
+	if got2 != 4 {
+		t.Errorf("twoSum(2, 2) = %d, want 4", got2)
+	}
+
 }
