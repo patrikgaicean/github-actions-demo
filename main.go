@@ -3,11 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	// doing nothing here
-	x := twoSum(5, 6)
-	fmt.Println(x)
+	msg := sayHello("Alice")
+	fmt.Println(msg)
 }
 
-func twoSum(a, b int) (sum int) {
-	return a + b
+func sayHello(name string) string {
+	return fmt.Sprintf("Hi %s", name)
 }
